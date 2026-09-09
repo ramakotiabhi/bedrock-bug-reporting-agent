@@ -28,15 +28,17 @@ To fulfill all grading criteria, include the following visual evidence and termi
 ---
   ### 2. 2. DynamoDB Table Record Scan
 Description: AWS CLI or console scan output of the bug-report-tool-stack-bug-reports DynamoDB table
-![image]("E:\ABHI\SRM COLLLEGE\NOTES\optimization Techniques\PYTHON\Screenshots\Screenshot 2026-09-09 153503.png")
+<img width="1091" height="407" alt="Screenshot 2026-09-09 153503" src="https://github.com/user-attachments/assets/be798111-5ef7-47ab-ab1f-759c1692feec" />
+
 
 ### 3. 3. Platform FAQ & Support Hand-off Transcripts
 Description: Conversational logs for non-bug paths.
-![image]("E:\ABHI\SRM COLLLEGE\NOTES\optimization Techniques\PYTHON\Screenshots\Screenshot 2026-09-09 150344.png")
+<img width="996" height="357" alt="Screenshot 2026-09-09 150344" src="https://github.com/user-attachments/assets/8d5f9be0-d387-413e-9c4c-7ceda69f6370" />
+
 
 ### 4. 4. Bedrock Evaluation Job Results
 Description: Screenshot of the completed Amazon Bedrock Evaluation console for job support-chatbot-eval-run-1.
-![image]("E:\ABHI\SRM COLLLEGE\NOTES\optimization Techniques\PYTHON\Screenshots\Screenshot 2026-09-09 152836.png")
+<img width="1285" height="991" alt="Screenshot 2026-09-09 152836" src="https://github.com/user-attachments/assets/71790b5d-1089-46c1-b316-6938fa93e657" />
 
 ### Observations & Testing Insights
 Single-Turn vs. Multi-Turn Behavior: Initial testing indicated that single-turn bug prompts (e.g., "The checkout page crashes") do not immediately commit records to the database[cite: 1, 2]. Because the system prompt enforces a strict multi-turn collection policy, the initial turn correctly leaves the ticket uncreated while prompting the user for missing fields (stepsToReproduce and environment)[cite: 4, 5].
