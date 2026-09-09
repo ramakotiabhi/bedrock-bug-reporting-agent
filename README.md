@@ -1,0 +1,74 @@
+# AWS Bedrock AgentCore Customer Support Chatbot
+
+## Project Overview
+This project builds, tests, and evaluates a multi-turn customer support chatbot using the **Amazon Bedrock AgentCore managed harness**, AWS Lambda, DynamoDB, and Bedrock Evaluations[cite: 3, 4, 5]. The system handles three distinct conversational paths driven entirely by prompt engineering:
+1. **Bug Reports** — systematically collects missing information (description, steps to reproduce, and environment) across conversational turns before invoking a gateway tool call to store the ticket in DynamoDB.
+2. **Platform Questions** — answers order, shipping, return, and payment inquiries using strictly embedded FAQ documentation.
+3. **Other Requests** — safely redirects out-of-scope inquiries or unsupported queries to the human support phone line (`1-800-555-0199`)[cite: 4, 5].
+
+---
+
+## Repository Structure & Core Deliverables
+* **`system_prompt.txt`** — The primary prompt engineering deliverable defining category exclusivity, bug collection checks, and FAQ grounding rules[cite: 4, 5].
+* **`agentcore_config.json`** — Stores active resource ARNs for the harness, gateway, and backend Lambda.
+* **`harness-tests.json`** — Test suite covering the bug report, platform question, and out-of-scope routing paths[cite: 2].
+* **`output_eval_dataset.jsonl`** — Evaluation dataset generated via the automated test script for Bedrock LLM-as-a-judge assessments.
+
+---
+
+## Verification Evidence & Required Screenshots (For Submission)
+
+To fulfill all grading criteria, include the following visual evidence and terminal transcripts in your final submission document:
+
+### 1. Bug Report Multi-Turn Chat Transcript & Tool Execution
+*  Terminal log from `chat.py` demonstrating the sequential, multi-turn collection of troubleshooting parameters.
+![image]("E:\ABHI\SRM COLLLEGE\NOTES\optimization Techniques\PYTHON\Screenshots\Screenshot 2026-09-09 153436.png")
+---
+  ### 2. 2. DynamoDB Table Record Scan
+Description: AWS CLI or console scan output of the bug-report-tool-stack-bug-reports DynamoDB table
+![image]("E:\ABHI\SRM COLLLEGE\NOTES\optimization Techniques\PYTHON\Screenshots\Screenshot 2026-09-09 153503.png")
+
+### 3. 3. Platform FAQ & Support Hand-off Transcripts
+Description: Conversational logs for non-bug paths.
+![image]("E:\ABHI\SRM COLLLEGE\NOTES\optimization Techniques\PYTHON\Screenshots\Screenshot 2026-09-09 150344.png")
+
+### 4. 4. Bedrock Evaluation Job Results
+Description: Screenshot of the completed Amazon Bedrock Evaluation console for job support-chatbot-eval-run-1.
+![image]("E:\ABHI\SRM COLLLEGE\NOTES\optimization Techniques\PYTHON\Screenshots\Screenshot 2026-09-09 152836.png")
+
+### Observations & Testing Insights
+Single-Turn vs. Multi-Turn Behavior: Initial testing indicated that single-turn bug prompts (e.g., "The checkout page crashes") do not immediately commit records to the database[cite: 1, 2]. Because the system prompt enforces a strict multi-turn collection policy, the initial turn correctly leaves the ticket uncreated while prompting the user for missing fields (stepsToReproduce and environment)[cite: 4, 5].
+
+Database Persistence Verification: As confirmed through DynamoDB table scans, no records are written to the database during early conversational turns. Data is strictly committed only after all mandatory parameters are fully gathered, ensuring cleanly populated ticket entries (such as ticket ID 3fb68064-ca23-4976-a3e6-4ac6e97b6fd6) with an OPEN status.
+
+Routing Precision: Running the LLM-as-a-judge evaluation workflow with Builtin.Correctness confirmed that the system prompt's category exclusivity rules successfully prevent cross-contamination (e.g., general FAQ inquiries never trigger accidental bug-reporting logic or unintended tool calls).
+
+### Built WithAmazon Bedrock AgentCore managed harness - Runs the chatbot loop, sessions, and tool executions  
+* Amazon Bedrock AgentCore Gateway - Exposes the bug report Lambda as a gateway tool
+* Amazon Bedrock Evaluations - LLM-as-a-judge response evaluation
+* AWS Lambda - Bug report tool runtime
+* Amazon DynamoDB - Ticket storage database  License
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
