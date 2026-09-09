@@ -22,7 +22,9 @@ To fulfill all grading criteria, include the following visual evidence and termi
 
 ### 1. Bug Report Multi-Turn Chat Transcript & Tool Execution
 *  Terminal log from `chat.py` demonstrating the sequential, multi-turn collection of troubleshooting parameters.
-![image]("E:\ABHI\SRM COLLLEGE\NOTES\optimization Techniques\PYTHON\Screenshots\Screenshot 2026-09-09 153436.png")
+<img width="604" height="350" alt="Screenshot 2026-09-09 153436" src="https://github.com/user-attachments/assets/dc9de77e-9a53-4283-a596-402ff7d1bd26" />
+
+
 ---
   ### 2. 2. DynamoDB Table Record Scan
 Description: AWS CLI or console scan output of the bug-report-tool-stack-bug-reports DynamoDB table
