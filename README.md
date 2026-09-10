@@ -22,18 +22,19 @@ To fulfill all grading criteria, include the following visual evidence and termi
 
 ### 1. Bug Report Multi-Turn Chat Transcript & Tool Execution
 *  Terminal log from `chat.py` demonstrating the sequential, multi-turn collection of troubleshooting parameters.
-<img width="604" height="350" alt="Screenshot 2026-09-09 153436" src="https://github.com/user-attachments/assets/dc9de77e-9a53-4283-a596-402ff7d1bd26" />
-
+<img width="1677" height="682" alt="Screenshot 2026-09-10 221041" src="https://github.com/user-attachments/assets/fafb3082-c251-463b-a860-c4a0ecd8fd3c" />
 
 ---
   ### 2. 2. DynamoDB Table Record Scan
 Description: AWS CLI or console scan output of the bug-report-tool-stack-bug-reports DynamoDB table
-<img width="1091" height="407" alt="Screenshot 2026-09-09 153503" src="https://github.com/user-attachments/assets/be798111-5ef7-47ab-ab1f-759c1692feec" />
+<img width="1313" height="659" alt="Screenshot 2026-09-10 221100" src="https://github.com/user-attachments/assets/f424a322-bb17-4408-86b2-094c747c0459" />
+
 
 
 ### 3. 3. Platform FAQ & Support Hand-off Transcripts
 Description: Conversational logs for non-bug paths.
-<img width="996" height="357" alt="Screenshot 2026-09-09 150344" src="https://github.com/user-attachments/assets/8d5f9be0-d387-413e-9c4c-7ceda69f6370" />
+<img width="1115" height="480" alt="Screenshot 2026-09-10 220903" src="https://github.com/user-attachments/assets/537b50ca-bc10-477e-8843-4b4d5060c87f" />
+
 
 
 ### 4. 4. Bedrock Evaluation Job Results
