@@ -21,6 +21,7 @@ This project builds, tests, and evaluates a multi-turn customer support chatbot 
 To fulfill all grading criteria, include the following visual evidence and terminal transcripts in your final submission document:
 
 ### 1. Bug Report Multi-Turn Chat Transcript & Tool Execution
+Bug Report Path & DynamoDB Storage: from  terminal logs show the assistant successfully gathering the required details (description, steps to reproduce, and environment) and executing the [tool call] bugreports___create_bug_report action. The DynamoDB scan output confirms the item was successfully written to the bug-report-tool-stack-bug-reports table with an OPEN status and valid ticket ID (b08ac2e4-4fda-4057-85cf-3a99f4362e1c).
 *  Terminal log from `chat.py` demonstrating the sequential, multi-turn collection of troubleshooting parameters.
 <img width="1677" height="682" alt="Screenshot 2026-09-10 221041" src="https://github.com/user-attachments/assets/fafb3082-c251-463b-a860-c4a0ecd8fd3c" />
 
@@ -33,6 +34,13 @@ Description: AWS CLI or console scan output of the bug-report-tool-stack-bug-rep
 
 ### 3. 3. Platform FAQ & Support Hand-off Transcripts
 Description: Conversational logs for non-bug paths.
+Platform Questions & Hand-offs:  test run demonstrates proper handling for all three requested cases:
+
+Covered FAQ Question: Accurately answered support hours from the documentation.
+
+Uncovered FAQ Question: Correctly recognized that an expired subscription refund is not in the FAQ and routed to the support phone line (1-800-555-0199).
+
+Other Request: Properly identified an out-of-scope Python scripting request and provided a polite hand-off to human support.
 <img width="1115" height="480" alt="Screenshot 2026-09-10 220903" src="https://github.com/user-attachments/assets/537b50ca-bc10-477e-8843-4b4d5060c87f" />
 
 
