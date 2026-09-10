@@ -39,7 +39,8 @@ Description: Conversational logs for non-bug paths.
 ### 4. 4. Bedrock Evaluation Job Results
 Description: Screenshot of the completed Amazon Bedrock Evaluation console for job support-chatbot-eval-run-1.
 <img width="1269" height="792" alt="Screenshot 2026-09-10 160746" src="https://github.com/user-attachments/assets/abb7b7a0-d3b8-4000-aba0-471b01a2fa2c" />
-
+<img width="993" height="637" alt="Screenshot 2026-09-10 160654" src="https://github.com/user-attachments/assets/bf21047f-d720-44ca-bca1-66ea96c5c4b3" />
+<img width="865" height="621" alt="Screenshot 2026-09-10 160708" src="https://github.com/user-attachments/assets/1fdbf6e0-28ec-4ee7-baa0-9acf68c817b9" />
 
 ### Observations & Testing Insights
 Single-Turn vs. Multi-Turn Behavior: Initial testing indicated that single-turn bug prompts (e.g., "The checkout page crashes") do not immediately commit records to the database[cite: 1, 2]. Because the system prompt enforces a strict multi-turn collection policy, the initial turn correctly leaves the ticket uncreated while prompting the user for missing fields (stepsToReproduce and environment)[cite: 4, 5].
