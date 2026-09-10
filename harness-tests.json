@@ -1,19 +1,17 @@
-{
-  "tests": [
-    {
-      "id": "test-faq-return-policy",
-      "prompt": "What is your return policy?",
-      "expected": "The chatbot should provide the return policy details accurately from the FAQ."
-    },
-    {
-      "id": "test-out-of-scope-weather",
-      "prompt": "Can you tell me what the weather is like outside?",
-      "expected": "The chatbot should politely redirect the user to human support at 1-800-555-0199."
-    },
-    {
-      "id": "test-bug-report-initial",
-      "prompt": "The checkout page crashes every time I try to click pay.",
-      "expected": "The chatbot should acknowledge the issue and ask for the steps to reproduce or environment details."
-    }
-  ]
-}
+[
+  {
+    "name": "Bug Report Test",
+    "prompt": "The checkout button is completely unclickable on my screen.",
+    "expected_category": "bug"
+  },
+  {
+    "name": "Platform FAQ Test",
+    "prompt": "What is your return policy for items?",
+    "expected_category": "faq"
+  },
+  {
+    "name": "Other Request Test",
+    "prompt": "What is the weather forecast for tomorrow in New York?",
+    "expected_category": "other"
+  }
+]
