@@ -52,7 +52,7 @@ Description: Screenshot of the completed Amazon Bedrock Evaluation console for j
 <img width="865" height="621" alt="Screenshot 2026-09-10 160708" src="https://github.com/user-attachments/assets/1fdbf6e0-28ec-4ee7-baa0-9acf68c817b9" />
 
 ### Observations & Testing Insights
-Single-Turn vs. Multi-Turn Behavior: Initial testing indicated that single-turn bug prompts (e.g., "The checkout page crashes") do not immediately commit records to the database[cite: 1, 2]. Because the system prompt enforces a strict multi-turn collection policy, the initial turn correctly leaves the ticket uncreated while prompting the user for missing fields (stepsToReproduce and environment)[cite: 4, 5].
+Single-Turn vs. Multi-Turn Behavior: Initial testing indicated that single-turn bug prompts (e.g., "The checkout page crashes") do not immediately commit records to the database[cite: 1, 2]. Because the system prompt enforces a strict multi-turn collection policy, the initial turn correctly leaves the ticket uncreated while prompting the user for missing fields (stepsToReproduce and environment)
 
 Database Persistence Verification: As confirmed through DynamoDB table scans, no records are written to the database during early conversational turns. Data is strictly committed only after all mandatory parameters are fully gathered, ensuring cleanly populated ticket entries (such as ticket ID 3fb68064-ca23-4976-a3e6-4ac6e97b6fd6) with an OPEN status.
 
